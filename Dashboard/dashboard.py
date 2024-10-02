@@ -47,7 +47,7 @@ def create_waktu_pengiriman(df):
 
 
 ### import data ###
-all_df = pd.read_csv("final_data.csv")
+all_df = pd.read_csv("Dashboard/final_data.csv")
 
 # Konversi kolom tanggal menjadi datetime tanpa format spesifik
 all_df["order_purchase_timestamp"] = pd.to_datetime(all_df["order_purchase_timestamp"])
