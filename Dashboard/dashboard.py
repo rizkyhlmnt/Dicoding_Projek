@@ -1,7 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import zipfile
 import streamlit as st
 from babel.numbers import format_currency
 sns.set(style='dark')
@@ -48,12 +47,8 @@ def create_waktu_pengiriman(df):
 
 
 ### import data ###
-#all_df = pd.read_csv("final_data.csv")
+all_df = pd.read_csv("final_data.csv")
 
-with zipfile.ZipFile('final_data.zip') as z:
-    with z.open('final_data.csv') as f:
-        all_df = pd.read_csv(f)
-        
 # Konversi kolom tanggal menjadi datetime tanpa format spesifik
 all_df["order_purchase_timestamp"] = pd.to_datetime(all_df["order_purchase_timestamp"])
 all_df["order_delivered_carrier_date"] = pd.to_datetime(all_df["order_delivered_carrier_date"])
